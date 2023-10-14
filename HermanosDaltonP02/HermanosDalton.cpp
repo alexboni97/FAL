@@ -1,44 +1,48 @@
 // ALEX GUILLERMO BONILLA TACO 
 
 #include <iostream>
-
+#include<vector>
 #include <fstream>
 using namespace std;
+/*
+{Vi: 0<=i<v.size:v[i]>=1 ^v[i] <= 1000000 ^ v.size>0}
+fun esDalton(vector<int>v)  dev bool b
+{b=(Vi: 0<=i<v.size()-1:v[i]>v[i+1]} V
+{v=(Vi: 0<=i<v.size()-1:v[i]<v[i+1]}
+*/
+
 const int MAX_P = 100000;
-const int MAX_ALT = 1000000;
 
 
-bool esDalton(int vinetas[], const int & nPer) {
-    
-    if (nPer < 2||nPer>MAX_P|| vinetas[0] == vinetas[1]) return false;
-   
-    if (vinetas[0] < vinetas[1]) {
-        int i = 1;
-        while (i < nPer) {
-            if (vinetas[i - 1] > vinetas[i]||vinetas[i-1]<=0||vinetas[i]>MAX_ALT) return false;
+bool esDalton(vector<int>vinetas) {
+    bool dalton=true;
+    int i = 1;
+    while (i<vinetas.size()-1&&dalton)
+    {
+        if (vinetas[i - 1] < vinetas[i]&& vinetas[i] < vinetas[i+1]) {
+            dalton = true;
             i++;
         }
-   
-    }
-    
-    else if (vinetas[0] > vinetas[1]) {
-        int i = 1;
-        while (i < nPer) {
-            if (vinetas[i - 1] < vinetas[i] || vinetas[i] <= 0|| vinetas[i-1] > MAX_ALT) return false;
+        else if (vinetas[i - 1] > vinetas[i]&& vinetas[i] > vinetas[i+1]) {
+            dalton = true;
             i++;
+        }
+        else {
+            i++;
+            dalton = false;
         }
     }
     
-    return true;
+    return dalton;
 }
 
 
 bool resuelveCaso() {
     int nPer;
-    int vinetas[MAX_P];
     
     //Leer caso de prueba: cin>>...
     cin >> nPer;
+    vector<int>vinetas(nPer);
     for (int i = 0; i < nPer; i++) {
         cin >> vinetas[i];
     }
@@ -48,7 +52,7 @@ bool resuelveCaso() {
 
     //Resolver problema
     //Escribir resultado
-    if (esDalton(vinetas, nPer)) cout << "DALTON\n" ;
+    if (esDalton(vinetas)) cout << "DALTON\n" ;
     else
         cout << "DESCONOCIDOS\n";
     

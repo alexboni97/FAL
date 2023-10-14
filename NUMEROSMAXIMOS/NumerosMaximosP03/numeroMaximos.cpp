@@ -4,6 +4,14 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
+/*
+PRE {Vn: 0<=n<v.size:v[i]>=1 ^v[i] <= 1000000 ^ v.size>0}
+
+fun contarMaximo(int n int c)    dev int numMax
+
+POS {b=(Vi: 0<=i<v.size()-1:v[i]>v[i+1]} V
+    {v=(Vi: 0<=i<v.size()-1:v[i]<v[i+1]}
+*/
 
 void contarMaximo(int& numMax, int& cont) {
     int aux;
