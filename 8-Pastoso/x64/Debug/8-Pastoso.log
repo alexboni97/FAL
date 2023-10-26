@@ -1,4 +1,3 @@
 ﻿  pastoso.cpp
-C:\Users\alex\Desktop\IS 23-24\FAL\8-Pastoso\pastoso.cpp(22,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\alex\Desktop\IS 23-24\FAL\8-Pastoso\pastoso.cpp(31,48): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\alex\Desktop\IS 23-24\FAL\8-Pastoso\pastoso.cpp(21,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
   8-Pastoso.vcxproj -> C:\Users\alex\Desktop\IS 23-24\FAL\8-Pastoso\x64\Debug\8-Pastoso.exe

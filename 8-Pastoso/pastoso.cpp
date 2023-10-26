@@ -15,21 +15,22 @@ fun esPastoso(vector<int>v,int n) dev bool b
 POS{b=(Existe max p:p<=n : v[p]=(sumatorio(i):p<i<v.size:v[i]))}
 */
 
-int esPastoso(vector<int>v) {
-    int suma = v[v.size()-1];
-    int pos =0;
+bool esPastoso(vector<int>v,int&pos) {
+    long long suma = 0;
     bool loEs = false;
-    int i = v.size() - 2;
+    int i = v.size() - 1;
     while (i >= 0 && !loEs) {
         if (v[i] == suma) {
             pos = i;
             loEs = true;
+            return loEs;
         }
         else { suma += v[i]; }
             i--;
     }
-    if (v[v.size() - 1] == 0) { pos = v.size() - 1; }
-    return pos;
+    //if (v[v.size() - 1] == 0) { pos = v.size() - 1; return loEs=true; }
+
+    return loEs;
 }
 
 void resuelveCaso() {
@@ -37,16 +38,22 @@ void resuelveCaso() {
        //Lee los datos
     int N;
     cin >> N;
-    vector<int>v(N);
-    for (size_t i = 0; i < v.size(); i++) {
-        cin >> v[i];
+    //CASO ESPECIAL N==0
+    if (N > 0) {
+        vector<int>v(N);
+        for (size_t i = 0; i < v.size(); i++) {
+            cin >> v[i];
+        }
+    int p=0;
+    if (!esPastoso(v,p)) cout << "NO\n";
+    else cout << "SI " << p<< endl;
     }
-
+    else
+    {
+        cout << "NO" << endl;
+    }
        //Calcula el resultado
-    int sol = esPastoso(v);
        //Escribe el resultado
-    if (sol == 0) cout << "NO\n";
-    else cout << "SI " << sol<< endl;
 }
 
 int main() {

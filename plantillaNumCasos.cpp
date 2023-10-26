@@ -3,15 +3,18 @@
 
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 
 
 void resuelveCaso() {
     //resuelve aqui tu caso
-       //Lee los datos
-       //Calcula el resultado
-       //Escribe el resultado
+    //Lee los datos
+      
+    //Calcula el resultado
+    //Escribe el resultado
 }
 
 int main() {
@@ -22,7 +25,7 @@ int main() {
 #endif
 
 
-    unsigned int numCasos;
+    int numCasos;
     std::cin >> numCasos;
     // Resolvemos
     for (int i = 0; i < numCasos; ++i) {
