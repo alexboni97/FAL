@@ -9,54 +9,44 @@
 using namespace std;
 
 
-int intervaloMax(vector<int>v, const int& N) {
-    int n = 0; int r = 0; int s = 0; int r2 = 0; int s2 = 0;
+int intervaloMax(vector<int>v, const int& N, const int&K) {
+    int n = 0; int r = 0; int s = 0;  
+    int c = 0,caux=0;
     while (n != N) {
-        if (v[n] == 0)
+        caux++;
+        if (v[n] != 0)//cuenta ceros consecutivos
             s = n + 1;
         r = max(r, (n + 1 - s));
-        if (v[n] == 1)
-            s2 = n + 1;
-        r2 = max(r2, (n + 1 - s2));
+        if (K < r) {//reseteo si me paso de k consecutivos
+            r = K; 
+            caux = K;
+        }
         n = n + 1;
+        c = max(caux, c);//me quedo con el contador mayor en cada iteracion
     }
 
-    return max(r, r2);
+    return c;
 }
 void resuelveCaso() {
-    int n, par;
+    int n, k;
     //resuelve aqui tu caso
     //Lee los datos
-    cin >> n >> par;
+    cin >> n >> k;
     if (n == 0)cout << 0 << endl;
     else {
         vector<int>v(n);
-        v[0] = 0;
-        int x, y;
-        cin >> x;
-        for (int i = 1; i < n; i++) {
-            cin >> y;
-            if (x == y + 1 || x == y - 1 || (x %  y== 0 || y%x==0)) {
-                v[i] = v[i - 1];
-            }
-            else if (v[i - 1] == 0) {
-                v[i] = 1;
-            }
-            else if (v[i - 1] == 1) {
-                v[i] = 0;
-            }
-            x = y;
-        }
+   
+        int x;
         for (int i = 0; i < n; i++) {
-
-            cout << v[i] << " ";
-
+            cin >> x;
+            if (x % 2 == 0) v[i] = 0;
+            else v[i] = 1;
         }
-        cout << endl;
+        
         //Calcula el resultado
 
         //Escribe el resultado
-       // cout << intervaloMax(v, n) << endl;
+       cout << intervaloMax(v,n,k) << endl;
     }
 
 }
