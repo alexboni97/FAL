@@ -5,7 +5,7 @@
 #include <fstream>
 using namespace std;
 /*
-ESPECIFICACION
+ESPECIFICACION          
 
 {0<temperaturas.size<=10000 ^ Vi:0<=i<temperaturas.size ^ -50<v[i]<=50 }
 fun contarPicosValles(int temperaturas[10000], int nTemps) dev (int picos, int valles )
