@@ -15,15 +15,14 @@ int calcularComplementario(int digito) {
 }
 
 // Función recursiva para calcular el número de dígitos complementarios
-int complementario(int numero, int resultado) {
-    if (numero == 0) {
-        return resultado;
+int complementario(int n, int&r) {
+    if (n == 0) {
+        return r;
     }
-
-    int digito = numero % 10;
-    int c = calcularComplementario(digito);
-
-    return complementario(numero / 10, resultado * 10 + c);
+    else {
+        int d = 9 - n % 10;
+        return complementario(n / 10, r * 10 + c);
+    }
 }
 int inverso(int numero, int resultado) {
     if (numero == 0) {
