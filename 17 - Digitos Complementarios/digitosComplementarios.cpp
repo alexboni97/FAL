@@ -13,7 +13,7 @@ int calcularComplementario(int digito) {
     return 9 - digito;
 }
 
-// Función recursiva para calcular el número de dígitos complementarios
+// Funciï¿½n recursiva para calcular el nï¿½mero de dï¿½gitos complementarios
 int complementario(int n,int &r) {
     int c;
     if (n <10) {
