@@ -1,0 +1,5 @@
+﻿  vectorParcialOrdenado.cpp
+C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\20 - Vector parcialmente ordenado\vectorParcialOrdenado.cpp(50,18): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\20 - Vector parcialmente ordenado\vectorParcialOrdenado.cpp(64,21): warning C4244: 'argumento': conversión de 'double' a 'const unsigned __int64'; posible pérdida de datos
+C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\20 - Vector parcialmente ordenado\vectorParcialOrdenado.cpp(69,16): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+  20 - Vector parcialmente ordenado.vcxproj -> C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\20 - Vector parcialmente ordenado\x64\Debug\20 - Vector parcialmente ordenado.exe

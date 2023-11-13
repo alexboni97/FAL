@@ -1,11 +1,10 @@
-
 //ALEX GUILLERMO BONILLA TACO
-
 
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <math.h>
 using namespace std;
 
 
@@ -15,34 +14,44 @@ int calcularComplementario(int digito) {
 }
 
 // Función recursiva para calcular el número de dígitos complementarios
-int complementario(int numero, int resultado) {
-    if (numero == 0) {
-        return resultado;
+int complementario(int n,int &r) {
+    int c;
+    if (n <10) {
+        c=9-n;
+        r++;
     }
-
-    int digito = numero % 10;
-    int c = calcularComplementario(digito);
-
-    return complementario(numero / 10, resultado * 10 + c);
+    else {
+        c = (complementario(n / 10,r))*10+complementario(n%10,r);
+    }
+    return c;
 }
-int inverso(int numero, int resultado) {
-    if (numero == 0) {
-        return resultado;
+int inverso(int n, int&r,int inv) {
+    int i;
+    if (n == 0) {
+       i=inv*pow(10,r);
     }
+    else {
+        r--;
+        i=inverso(n / 10, r,10*inv+n%10);
+    }
+    return i;
+}
 
-    int digito = numero % 10;
-
-    return inverso(numero / 10, resultado * 10 + digito);
+int inverso(int n,int &r) {
+    int inv = 0;
+    return inverso(n, r,inv);
 }
 void resuelveCaso() {
-    int n;
+    int n, r;
+    r = 0;
     //resuelve aqui tu caso
     //Lee los datos
     cin >> n;
         //Calcula el resultado
-
+    n = complementario(n, r);
+    r = inverso(n, r);
         //Escribe el resultado
-    cout << complementario(n,0) << " " << inverso(n,0) << endl;
+    cout << n << " " << r << endl;
 
 }
 
