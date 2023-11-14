@@ -7,7 +7,23 @@
 #include <algorithm>
 using namespace std;
 
-
+bool esApto(vector <int>v, const int& d) {
+    
+    int c = 0;
+    size_t i = 1;
+    while (i<v.size()) {
+        if (v[i - 1] < v[i]) {
+            c += (v[i] - v[i - 1]);
+        }
+        else c = 0;
+        if (c > d) {
+            return false;
+        }
+        
+        i++;
+    }
+    return true;
+}
 
 bool resuelveCaso() {
     int d, n;
@@ -16,33 +32,14 @@ bool resuelveCaso() {
     if (!std::cin)
         return false;
     vector<int>v(n);
-    v[0] = 0;
-    int x, y,z;
-    cin >> x;
-    z = 0;
-    for (int i = 1; i < n; i++) {
-        cin >> y;
-        if (x < y && z < d) {
-            v[i] = v[i - 1];
-            z += y - x;
-        }
-        else if (v[i - 1] == 0) {
-            v[i] = 1;
-            z = 0;
-        }
-        else if (v[i - 1] == 1) {
-            v[i] = 0;
-            z = 0;
-        }
-        x = y;
-        
+    for (int i = 0; i < n;i++) {
+        cin >> v[i];
     }
-    for (int i = 0; i < n; i++) {
-
-        cout << v[i] << " ";
-
+    
+    if (esApto(v, d)) {
+        cout << "APTA" << endl;
     }
-    cout << endl;
+    else cout << "NO APTA"<< endl;
 
 
     //Resolver problema
