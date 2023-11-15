@@ -10,30 +10,28 @@ using namespace std;
 
 
 int segmentosCerosUnos(vector<int>v, const int& N, const int& L) {
-    int n = L; int r0 = 0,r1=0; int s = 0;
-    int c = 1, caux=0;
-    if (v[n] != 0 && v[n] != 1) caux = L-1;
-    
-    while (n != N) {
-        caux++;
-        if (v[n] == 0)//cuenta unos
-            r0 ++;
-        if (v[n] == 1)//cuenta ceros 
-            r1++;
-        if (caux == L) {
-            if (r0 == r1)c++;
-            else {
-
-            }
+    int c1 = 0, c0 = 0, s = 1, p = L, pI = 0;;
+    while (p < N) {
+        if (v[p] == 0) {
+            c0++;
         }
-        if (v[n] == 1) {//reseteo si me paso de k consecutivos
-            r = 0;
+        if (v[p] == 1) {
+            c1++;
         }
-        n = n + 1;
-        c += r;//me quedo con el contador mayor en cada iteracion
+        if (v[pI] == 0) {
+            c0--;
+        }
+        if (v[pI] == 1) {
+            c1--;
+        }
+        if (c0 == c1) {
+            s++;
+        }
+        pI++;
+        p++;
     }
 
-    return c;
+    return s;
 }
 void resuelveCaso() {
     int n, l;

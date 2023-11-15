@@ -58,22 +58,17 @@ bool resuelveCaso() {
     cin >> n;
     if (!std::cin || n == 0)
         return false;
-    int tam = 1,x=0;
-    vector<int>v(tam);
+    vector<int>v;
     while (n != 0) {
-        v.resize(pow(2, tam));
-        for (size_t i = x; i<v.size(); i++) {
-            v[i] = n;
-            cin >> n;
-        }
-        x = pow(2, tam);
-        tam++;
+        v.push_back(n);
+        cin >> n;
     }
     
     //Resolver problema
     //Escribir resultado
     if (parcialOrdenado(v))cout << "SI" << endl;
     else cout << "NO" << endl;
+    
 
     return true;
 }
