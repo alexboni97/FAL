@@ -10,24 +10,41 @@ using namespace std;
 
 int segmentoMasCorto(vector<int>v, const int& N, const int& K) {
     int s = N+1, saux = 0, n = 0, pi = 0, c = 0;
-    for (int i = 0; i < K; i++) {
-        if (v[i] == 1) {
+    
+    while (c == 0) {
+        if (v[n] == 1) {
             c++;
+            pi = n;
+
         }
+        n++;
     }
-    if (c == K) return K;
     
     while (n < N) {
+        
         if (v[n] == 1) {
             c++;
             saux++;
+            if (c == 0) {
+                pi = n;
+            }
         }
-        if (v[pi] == 1) {
+        if (v[n] == 0) {
+            saux++;
+        }
+        if (c == K) {
+            s = min(s, saux);
             c--;
-        }
-        if (c == K)s = min(saux,s);
+            pi++;
+            if (pi < n) {
+                while (v[pi] == 0) {
+                    pi++;
+                }
+            }
+            
+            saux = (n - pi+1);
 
-        
+        }
         n++;
     }
     return s;
