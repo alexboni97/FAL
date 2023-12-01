@@ -7,28 +7,31 @@
 #include<vector>
 using namespace std;
 
+//solucion profe mirar
+void parcialOrdenado(vector<int>const& v, int c, int f,bool&b, int& mi, int& ma) {
+    bool bi, bd;
+    int mii, mid, mai, mad;
 
+    if (f == c + 1) {
+        b = true;
+        mi = v[c];
+        ma = v[c];
+    }
+    else {
+        int m = (f + c) / 2;
+        parcialOrdenado(v, c, m,bi, mii, mai);
+        parcialOrdenado(v, m, f,bd, mid, mad);
+        b = bi && bd && mad >= mai && mii <= mid;
+        mi = min(mii, mid);
+        ma = max(mai, mad);
+    }
+    
+}
 /*
-int minV(vector<int>const&v,int c,int f) {
-    int s=v[c];
-    for (int i = c+1; i < f; i++) {
-        s=min(s, v[i]);
-    }
-    return s;
-}
-int maxV(vector<int>const& v, int c, int f) {
-    int s = v[c];
-    for (int i = c + 1; i < f; i++) {
-        s = max(s, v[i]);
-    }
-    return s;
-}
-*/
-
 bool parcialOrdenado(vector<int>const&v,int c,int f,int &mi,int& ma) {
     bool b1,b2;
     int r1, r2;
-    if (f<=c+1) {
+    if (f==c+1) {
         b1 = true;
         b2 = true;
         r1=mi = v[c];
@@ -46,6 +49,7 @@ bool parcialOrdenado(vector<int>const&v,int c,int f,int &mi,int& ma) {
     }
     return b1&&b2;
 }
+*/
 bool parcialOrdenado(vector<int>const &v) {
     int c = 0, f = v.size(), mi = 0, ma = 0;
     return parcialOrdenado(v,c,f,mi,ma);

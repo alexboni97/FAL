@@ -1,0 +1,3 @@
+﻿  fugaDePrision.cpp
+C:\Users\alex\Desktop\IS 23-24\FAL\23 - DYV Fuga de Prision\fugaDePrision.cpp(40,37): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+  23 - DYV Fuga de Prision.vcxproj -> C:\Users\alex\Desktop\IS 23-24\FAL\23 - DYV Fuga de Prision\x64\Debug\23 - DYV Fuga de Prision.exe
