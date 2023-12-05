@@ -1,1 +1,4 @@
-﻿  22 - DYV CURVA CONCAVA.vcxproj -> C:\Users\alex\Desktop\IS 23-24\FAL\22 - DYV CURVA CONCAVA\x64\Debug\22 - DYV CURVA CONCAVA.exe
+﻿  curvaConcava.cpp
+C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\22 - DYV CURVA CONCAVA\curvaConcava.cpp(20,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  LINK : no se encontró C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\22 - DYV CURVA CONCAVA\x64\Debug\22 - DYV CURVA CONCAVA.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  22 - DYV CURVA CONCAVA.vcxproj -> C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\22 - DYV CURVA CONCAVA\x64\Debug\22 - DYV CURVA CONCAVA.exe
