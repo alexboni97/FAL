@@ -1,0 +1,5 @@
+﻿  comensales.cpp
+C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\EC2 - VueltaAtras\comensales.cpp(89,13): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\EC2 - VueltaAtras\comensales.cpp(66,12): warning C4101: 'aux': variable local sin referencia
+C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\EC2 - VueltaAtras\comensales.cpp(112,20): warning C4018: '<': no coinciden signed/unsigned
+  EC2 - VueltaAtras.vcxproj -> C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\EC2 - VueltaAtras\x64\Debug\EC2 - VueltaAtras.exe
