@@ -1,4 +1,0 @@
-﻿  prueba.cpp
-C:\Users\alex\Desktop\IS 23-24\FAL\prueba\Project1\prueba.cpp(34,14): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\alex\Desktop\IS 23-24\FAL\prueba\Project1\prueba.cpp(35,14): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-  Project1.vcxproj -> C:\Users\alex\Desktop\IS 23-24\FAL\prueba\Project1\x64\Debug\Project1.exe
