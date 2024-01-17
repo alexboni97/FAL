@@ -1,5 +1,0 @@
-﻿  ultimaVezQue.cpp
-C:\Users\alex\Desktop\IS 23-24\FAL\ULTIMA_VEZ_QUE\ultimaVezQue.cpp(15,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\alex\Desktop\IS 23-24\FAL\ULTIMA_VEZ_QUE\ultimaVezQue.cpp(18,53): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\alex\Desktop\IS 23-24\FAL\ULTIMA_VEZ_QUE\ultimaVezQue.cpp(33,10): warning C4101: 'c': variable local sin referencia
-  ULTIMA_VEZ_QUE.vcxproj -> C:\Users\alex\Desktop\IS 23-24\FAL\ULTIMA_VEZ_QUE\x64\Debug\ULTIMA_VEZ_QUE.exe

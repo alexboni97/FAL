@@ -7,7 +7,10 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+/*
+a) todosPares(v,p,q)=
 
+*/
 
 int intervaloMax(vector<int>v, const int& N, const int&K) {
     int n = 0; int r = 0; int s = 0;  
