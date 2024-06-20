@@ -21,6 +21,7 @@ int minimo(vector<int>v) {
     return minimo(v, 0, n);
 }
 
+
 bool resuelveCaso() {
 
     //Leer caso de prueba: cin>>...

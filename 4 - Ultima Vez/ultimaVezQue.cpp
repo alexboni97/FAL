@@ -7,19 +7,43 @@
 #include <vector>
 using namespace std;
 
+/*
+ALCLARACIONES
+vector<string>paises: es la representacion del conjunto de paises, elementos que vamos a procesar
+int N: es el numero de elementos por entrada, es decir el tamaño del vector anterior
 
+ESPECIFICACION
+PRE={longitud(paises)=N ^ 0<N<100000}
+fun resolver(vector<string>paises, int N, string pais) dev int a
+POS={a=(max w: 0<=w<N ^ paises[w]=pais : w) || a=0 si (Vq:0<=q<N:paises[q]!=pais)}
+
+INVARIANTE= 0<=n<N ^ a=(max w: 0<=w<n ^ paises[w]=pais : w)
+FUNCION DE COTA= n
+
+COSTE=O(n)en el caso peor, siendo n el numero de elementos que tiene el vector, siendo la instruccion critica el while de la funcion resolver()
+
+*/
 
 // función que resuelve el problema
-int resolver(vector<string>paises,const string &pais) {
-    int sol = 0;
-    int i = paises.size();
-    i--;
-    while ( i  >= 0) {
-        if (paises[i] == pais) return paises.size() - i;
-        i--;
+int resolver(vector<string> paises, const int& N, const string &pais)
+{
+    int a=0;
+    bool encontrado = false;
+    int n = N - 1;
+    while (!encontrado && n >= 0)
+    {   
+        a++;
+        if (paises[n] == pais){
+            encontrado = true;
+        }
+        else {
+            n--;
+        }
     }
-
-    return sol;
+    if (a == N && !encontrado)
+        return 0;
+    else
+        return a;
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
@@ -38,7 +62,7 @@ bool resuelveCaso() {
         cin >>  paises[i];
     }
 
-    int sol = resolver(paises,pais);
+    int sol = resolver(paises,paises.size(),pais);
 
     // escribir sol
     if (sol == 0) {

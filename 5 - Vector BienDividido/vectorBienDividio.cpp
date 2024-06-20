@@ -11,13 +11,21 @@ using namespace std;
 ACLARACIONES:
 v: vector donde se almacenaran las temperaturas
 v.size= numero de elementos del vector
-n=v.size
+N=v.size
 pos= posicion que divide el vector
 
 ESPECIFICACION:
-PRE={v.size>0 ^0<=p<v.size}
-bool bienDivido(vector[]v,int n,int pos) dev bool b
-POS={b= Vi,j:0<=i<=p<j<n:v[i]<v[j]}
+PRE={v.size=N ^ 0<N}
+bool bienDivido(vector[]v,int N,int pos) dev bool b
+POS={b= Vi,j:0<=i<=pos<j<n:v[i]<v[j]}
+----------------------------------------------
+POS ={b=max(N-N,pos,v)<min(pos,N-1,v)}
+donde 
+max(i,j,v)=(max i:0<=i<=j ^(Vw : 0<=w<=j ^w!=i : v[w]=<v[i]):v[i] ])
+min(i,j,v)=(min i:0<=i<=j ^(Vw : 0<=w<=j ^w!=i : v[w]>=v[i]):v[i] ])
+-------------------------------------------------------------------------
+INVARIANTE=
+funcion de cota=N-i
 */
 
 //funcion que resuelve el problema

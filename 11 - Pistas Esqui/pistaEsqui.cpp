@@ -7,7 +7,23 @@
 #include <algorithm>
 using namespace std;
 
+/*
+ACLARACIONES
+vector<int>v: representa el conjunto de elementos que contiene cada caso de prueba, es decir, las alturas
+longitud(v): es el tamaño del vector
 
+ESPECIFICACION
+PRE={N=longitud(v) ^  0 <= N <= 1000 ^ Vi: 0 <=i< N:4000>v[i]>0}
+fun intervaloMax(vector<int>v , int N) dev int m
+POS={m=(max p,q : 0<= p<q <=N ^ (Vw:p<w<q:v[w]<v[w-1]): p-q)}
+
+INVARIANTE= 0<= n <=N ^ (max p,q : 0<= p<q <=n ^ (Vw:p<w<q:v[w]<v[w-1]): p-q)
+COTA= N-n
+
+COSTE: O(n), coste lineal, siendo n el numero de elemntos que tiene el vector, la instruccion critica es el bucle while()
+
+
+*/
 int intervaloMax(vector<int>v, const int& N) {
     int n = 0; int r = 0; int s = 0; int r2 = 0; int s2 = 0;
     while (n != N) {
@@ -22,6 +38,7 @@ int intervaloMax(vector<int>v, const int& N) {
     
     return max(r, r2);
 }
+
 void resuelveCaso() {
     int n;
     //resuelve aqui tu caso

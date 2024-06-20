@@ -7,22 +7,39 @@
 #include <algorithm>
 using namespace std;
 
-char presoFugado(vector <char>const& v, int i, int f, int ci,int cf) {
-    int c;
+char presoFugado(vector <char>const& v, int c, int f, char& viz,char& vd) {
     int m;
-    if (i == f) {
-        if (v[i] -v[f] ==0) {
-            c = v[i];
-        }
-        else c = 0;
+    char fug_iz=0,fug_d=0,max_iz=0,min_iz=0,max_d=0,min_d=0;
+    if (c+1 == f) {
+        viz=v[c];
+        vd=v[c];
+        return 0;
     }
     else {
-        m = (i + f) / 2;
-        c=max(presoFugado(v,i,m,ci,cf/2),presoFugado(v,m+1,f,cf/2+1,cf));
+        m = (c + f) / 2;
+        fug_iz = presoFugado(v, c, m, max_iz, min_iz);
+        fug_d = presoFugado(v, m, f, max_d, min_d);
+        viz = max(max_iz, max_d);
+        vd = min(min_iz, min_d);
+        if (max_iz == min_d - 2)
+            return max_iz + 1;
+        if (fug_iz != 0)
+            return fug_iz;
+        if (fug_d != 0)
+            return fug_d;
+        else
+            return 0;
     }
-    return c;
 }
-
+char presoFugado(vector <char>const& v, int N, int c,int f) {
+    char viz=0,vd=0;
+    if(v[0]!=c)
+        return c;
+    else if(v[N-1]!=f)
+        return f;
+    else
+       return presoFugado(v,0,N,viz,vd);
+}
 void resuelveCaso() {
     //resuelve aqui tu caso
     char i, f;
@@ -37,7 +54,7 @@ void resuelveCaso() {
 
     //Calcula el resultado
     //Escribe el resultado
-    cout << presoFugado(v,0,v.size()-1, i, f) << endl;
+    cout << presoFugado(v,v.size(), i, f) << endl;
 }
 
 int main() {

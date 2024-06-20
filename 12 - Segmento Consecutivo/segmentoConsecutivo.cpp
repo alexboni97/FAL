@@ -23,6 +23,7 @@ int intervaloMax(vector<int>v, const int& N) {
 
     return max(r, r2);
 }
+
 void resuelveCaso() {
     int n;
     //resuelve aqui tu caso

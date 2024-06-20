@@ -8,47 +8,61 @@
 #include <math.h>
 using namespace std;
 
-int segmentoMasCorto(vector<int>v, const int& N, const int& K) {
-    int s = N+1, saux = 0, n = 0, pi = 0, c = 0;
-    
-    while (c == 0) {
-        if (v[n] == 1) {
-            c++;
-            pi = n;
-
-        }
-        n++;
-    }
-    
-    while (n < N) {
+// int segmentoMasCorto(vector<int>v, const int& N, const int& K) {
+//     int r=0, c=0,f=0;
+//     int cmin=N+1;
+//     while (c<N)
+//     {
+//         if(r<K){
+//             if(v[f]==1){
+//                 r++;
+//             }
+//             f++;
+//         }else{
+//             if(v[c]==1)
+//                 r--;
+//             c++;
+//         }
+//         if(r==K){
+//             if (f - c < cmin) {
+// 				cmin = f - c;
+// 			}
+//         }
         
-        if (v[n] == 1) {
-            c++;
-            saux++;
-            if (c == 0) {
-                pi = n;
-            }
+//     }
+//     return cmin;
+// }
+int segmentoMasCorto(vector<int>v, const int& N, const int& K) {
+    int c=0,f=0,cont=0;
+    int min_long=N+1;
+    while (f < N && min_long==N+1)
+    {
+        if(v[f]==1){
+            if(cont==0)
+                c=f;
+            cont++;
         }
-        if (v[n] == 0) {
-            saux++;
+        if(cont==K){
+            min_long=min(min_long,f-c+1);
         }
-        if (c == K) {
-            s = min(s, saux);
-            c--;
-            pi++;
-            if (pi < n) {
-                while (v[pi] == 0) {
-                    pi++;
-                }
-            }
-            
-            saux = (n - pi+1);
-
-        }
-        n++;
+        f++;
     }
-    return s;
+    while (f<N)
+    {
+        if(v[f]==1){
+            c++;
+            while (v[c]!=1)
+            {
+                c++;
+            }
+            min_long=min(min_long,f-c+1);
+        }
+        f++;
+    }
+    return min_long;
+    
 }
+
 
 bool resuelveCaso() {
     int n, k;

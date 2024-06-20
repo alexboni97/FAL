@@ -1,4 +1,0 @@
-﻿  numSegmentoImparAcotado.cpp
-C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\EC1\numSegmentoImparAcotado.cpp(20,11): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\EC1\numSegmentoImparAcotado.cpp(51,30): warning C4101: 'n': variable local sin referencia
-  EC1.vcxproj -> C:\Users\ALEX BONILLA\Desktop\IS 23-24\FAL\EC1\x64\Debug\EC1.exe
